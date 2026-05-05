@@ -45,13 +45,24 @@ If the user has not specified an output format, ask:
 
 Validate that the requested format is in the supported list above. If not, tell the user which formats are supported and ask again.
 
-### 4. Determine the output path
+### 4. Choose an output date (optional)
 
-Construct the output path by replacing the input file's extension with the target format extension. Use the same directory as the input file.
+Ask the user:
+> "Would you like to embed a date in the output filename? If yes, enter a date (e.g. 2026-05-04 or 20260504). Press Enter to skip and keep the original filename."
+
+If the user provides a date:
+- Accept any common format: `YYYY-MM-DD`, `YYYYMMDD`, `MM/DD/YYYY`, `MM-DD-YYYY`
+- Normalise it to `YYYYMMDD` (e.g. `2026-05-04` → `20260504`)
+- Detect whether the input filename already contains a date-like segment (8 consecutive digits, e.g. `AUDIO20260514`):
+  - If yes, replace that segment with the new date: `AUDIO20260514.wav` → `AUDIO20260504.ogg`
+  - If no, append the date before the extension: `podcast.wav` → `podcast_20260504.mp3`
+- Use the same directory as the input file.
+
+If the user skips the date prompt, construct the output path by simply replacing the input file's extension with the target format extension:
 
 Example: `/Users/phil/Downloads/podcast.wav` → `/Users/phil/Downloads/podcast.mp3`
 
-If a file already exists at that path, append `_converted` before the extension:
+In either case, if a file already exists at the output path, append `_converted` before the extension:
 `/Users/phil/Downloads/podcast_converted.mp3`
 
 ### 5. Build and run the ffmpeg command
