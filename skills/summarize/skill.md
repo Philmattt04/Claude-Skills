@@ -1,5 +1,5 @@
 ---
-name: summarize
+name: Summarize
 description: Summarize any document, file, or pasted text using Claude. Produces structured output — executive summary, key points, main topics, notable details, and conclusion. Triggered when the user wants to summarize something (e.g. "summarize this document", "give me the key points of this file", "/summarize").
 ---
 

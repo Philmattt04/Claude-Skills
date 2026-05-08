@@ -1,5 +1,5 @@
 ---
-name: check-weather
+name: Check-Weather
 description: Get current weather conditions for any location using the Weather Dashboard API. Triggered when the user wants to check the weather (e.g. "check weather in Miami", "what's the weather in Paris", "/check-weather").
 ---
 
