@@ -1,5 +1,5 @@
 ---
-name: kafa-dev
+name: insurance-dev
 description: Development assistant for the KAFA Member Portal Flutter project at /Users/philsterr/Projects/kafa_member. Handles the three most common tasks: (1) adding multi-language strings to app_strings.dart across all 5 languages, (2) scaffolding a new screen with project patterns, (3) extending demo mode mock data. Triggered when the user wants to add strings, add a screen, or update demo data in the KAFA project.
 ---
 
